@@ -28,14 +28,12 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.(j|t)jsx$/,
+                test: /\.(j|t)sx$/,
                 exclude: /node_modules/,
                 use: {
                     loader: 'babel-loader',
                     options: {
-                        plugins: [
-                            isDevelopment && require.resolve('react-refresh/babel')
-                        ].filter(Boolean)
+                        plugins: [isDevelopment && require.resolve('react-refresh/babel')].filter(Boolean),
                 }}
             },
             {
